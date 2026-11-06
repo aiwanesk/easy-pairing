@@ -1,0 +1,27 @@
+# Online platform: pairing_easy behind Caddy (automatic HTTPS certificates).
+# 1. Point the DNS of your domain to the server.
+# 2. Set DOMAIN below (or in a .env file), then: docker compose up -d --build
+# 3. Open https://DOMAIN : the first page creates the administrator account.
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    environment:
+      PAIRING_EASY_PUBLIC_URL: https://${DOMAIN:-appariements.example.org}
+      PAIRING_EASY_TRUST_PROXY: "1"
+    volumes:
+      - data:/data
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      DOMAIN: ${DOMAIN:-appariements.example.org}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy:/data
+volumes:
+  data:
+  caddy:

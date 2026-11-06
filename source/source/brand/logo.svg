@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>pairing_easy</title>
+  <defs>
+    <path id="king" d="M0 0 L70 0 C78 0 80 -6 80 -12 L80 -18 C80 -26 74 -28 66 -29 C60 -30 58 -36 56 -42 C50 -54 40 -58 36 -62 C30 -110 26 -150 30 -176 L50 -178 C58 -178 60 -186 54 -190 L40 -194 C56 -206 56 -234 34 -244 L9 -248 L9 -262 L24 -262 L24 -276 L9 -276 L9 -296 L0 -296 L-9 -296 L-9 -276 L-24 -276 L-24 -262 L-9 -262 L-9 -248 L-34 -244 C-56 -234 -56 -206 -40 -194 L-54 -190 C-60 -186 -58 -178 -50 -178 L-30 -176 C-26 -150 -30 -110 -36 -62 C-40 -58 -50 -54 -56 -42 C-58 -36 -60 -30 -66 -29 C-74 -28 -80 -26 -80 -18 L-80 -12 C-80 -6 -78 0 -70 0 L0 0 Z"/>
+    <path id="queen" d="M0 0 L66 0 C74 0 76 -6 76 -11 L76 -17 C76 -24 70 -26 62 -27 C56 -28 54 -34 52 -39 C46 -50 37 -54 33 -58 C27 -104 24 -140 28 -164 L46 -166 C54 -166 56 -174 50 -178 L38 -181 L56 -232 L30 -206 L16 -244 L0 -212 L-16 -244 L-30 -206 L-56 -232 L-38 -181 L-50 -178 C-56 -174 -54 -166 -46 -166 L-28 -164 C-24 -140 -27 -104 -33 -58 C-37 -54 -46 -50 -52 -39 C-54 -34 -56 -28 -62 -27 C-70 -26 -76 -24 -76 -17 L-76 -11 C-76 -6 -74 0 -66 0 L0 0 Z"/>
+    <clipPath id="right"><rect x="0" y="-320" width="120" height="340"/></clipPath>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="#2a7a62"/>
+  <ellipse cx="256" cy="430" rx="196" ry="20" fill="#1f5c4a"/>
+  <!-- black king and queen, toppled -->
+  <g fill="#0d1f1a">
+    <g transform="translate(176 424) rotate(-90) scale(.52)"><use href="#king"/></g>
+    <g transform="translate(338 426) rotate(90) scale(.56)"><use href="#queen"/>
+      <circle cx="-56" cy="-238" r="10"/><circle cx="56" cy="-238" r="10"/><circle cx="-16" cy="-250" r="9"/><circle cx="16" cy="-250" r="9"/><circle cx="0" cy="-222" r="9"/></g>
+  </g>
+  <!-- white king, standing -->
+  <g transform="translate(256 430) scale(1.12)">
+    <use href="#king" fill="#ffffff"/>
+    <use href="#king" fill="#d8e5dd" clip-path="url(#right)"/>
+  </g>
+</svg>
